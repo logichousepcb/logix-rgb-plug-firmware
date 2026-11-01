@@ -202,6 +202,12 @@ All out-of-box defaults. The replacement firmware uses US Eastern, like the othe
 
 ### Resolved
 
+- **Updated to the 1.0.0 release build on 2026-11-01** (`logix-rgb-plug-1.0.0.bin`, SHA-256
+  `82694007…7dac85`) over the plug's own `/update`. It was back in about 8 s with the relay
+  on and the light (`#8ff0a4`, brightness 119) restored, and MQTT connected. Two
+  `presses=double` requests, as LogixDIY sends them, toggled the light off and on and left
+  the relay alone.
+
 - **Button confirmed 2026-11-01** under Logix RGB Plug: single presses switch the relay,
   double presses the light. 9 physical presses gave 7 actions (5 single, 2 double), with no
   double counts. The web page's light controls (color, brightness, Pulse) also worked.
