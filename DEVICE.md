@@ -59,7 +59,7 @@ The ESP8266 template array is in the order GPIO0, 1, 2, 3, 4, 5, 9, 10, 12, 13, 
 | A0 | 0 | None | Not used |
 
 The red/green/blue order is Tasmota's channel order (`SetOption37 0`, no channel remap): PWM1 is
-channel 1 = red. Which pin is which colour still needs a look on site (§12).
+channel 1 = red. **Confirmed on site 2026-11-01** (§12).
 
 ## 4. Button
 
@@ -197,10 +197,11 @@ All out-of-box defaults. The replacement firmware uses US Eastern, like the othe
 
 - **Make/model:** not known. The template matches no public entry; a look at the label on
   the plug would settle it.
-- **Light colours on site:** confirm GPIO0 = red, GPIO2 = green, GPIO5 = blue (set
-  `#ff0000`, `#00ff00`, `#0000ff` and look).
 
 ### Resolved
+
+- **Light colours confirmed 2026-11-01** on site: GPIO0 = red, GPIO2 = green, GPIO5 = blue,
+  as in the template.
 
 - **Updated to the 1.0.0 release build on 2026-11-01** (`logix-rgb-plug-1.0.0.bin`, SHA-256
   `82694007…7dac85`) over the plug's own `/update`. It was back in about 8 s with the relay
