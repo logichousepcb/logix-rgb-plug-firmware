@@ -200,3 +200,14 @@ All out-of-box defaults. The replacement firmware uses US Eastern, like the othe
 - **Light colours on site:** confirm GPIO0 = red, GPIO2 = green, GPIO5 = blue (set
   `#ff0000`, `#00ff00`, `#0000ff` and look).
 - **Button on site:** confirm a single press switches the relay and a double press the light.
+
+### Resolved
+
+- **Installed Logix RGB Plug 1.0.0 on 2026-11-01** over Tasmota's upload form
+  (`firmware.bin.gz`, SHA-256 `799b6ea6…cba5b5`). The first boot imported the Tasmota 12.0.2
+  settings from **`0xFB000`**: Tasmota writes a fresh copy there on the restart after an
+  upload, which has the highest `save_flag`, so the survey's `F6000` was no longer the current
+  copy. WiFi `ESP`, MQTT `192.168.1.130:1883`, the name `xTool M1`, relay off and light off
+  (white, brightness 26) all came across. It rejoined at 192.168.22.79 as `xtool-m1`, on a
+  closer AP this time (−64 dBm, channel 1), and connected to MQTT. Free space for the next
+  update is 504 KB, so plain `firmware.bin` uploads work from now on.
