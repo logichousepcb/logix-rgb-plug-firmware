@@ -98,7 +98,7 @@ The new state is saved to flash immediately and restored after a power cut.
 
 ## Simulate a button press
 
-`POST /api/controller/press` with `button=1|plug` and `action=single|double` (default `single`). This behaves exactly like the physical button: `single` toggles the plug, `double` toggles the light, and both count as an action.
+`POST /api/controller/press` with `button=1|plug` and `action=single|double` (default `single`; `presses` is accepted as another name for `action`, as on the other Logix devices). This behaves exactly like the physical button: `single` toggles the plug, `double` toggles the light, and both count as an action.
 
 # The light
 

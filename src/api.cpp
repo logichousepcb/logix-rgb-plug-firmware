@@ -184,7 +184,8 @@ void handlePress() {
   if (!authorize()) return;
   int i = Outlets::parse(g_server.arg("button"));
   if (i < 0 || i >= Outlets::COUNT) return sendResult(false, "button must be 1 or plug.");
-  Outlets::Action action = Outlets::parseAction(g_server.arg("action"));
+  // "presses" is what LogixDIY and the other Logix devices use; "action" matches the MQTT event.
+  Outlets::Action action = Outlets::parseAction(g_server.hasArg("action") ? g_server.arg("action") : g_server.arg("presses"));
   if (action == Outlets::Action::None) return sendResult(false, "action must be single or double.");
   Outlets::pressButton(i, action);
   logf("[cmd] press %s %s from http %s", Outlets::key(i), Outlets::actionName(action),

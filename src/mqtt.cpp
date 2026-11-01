@@ -113,7 +113,7 @@ void onMessage(char *topicC, byte *payload, unsigned int len) {
     String which = p, actionArg;
     if (!deserializeJson(doc, p) && doc.is<JsonObject>()) {
       which = doc["button"].as<String>();
-      actionArg = doc["action"] | "";
+      actionArg = doc["action"] | (doc["presses"] | "");
     }
     int i = Outlets::parse(which);
     if (i < 0 || i >= Outlets::COUNT) return result("press", false, "button must be 1 or plug.");
