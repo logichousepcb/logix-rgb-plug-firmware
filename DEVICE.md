@@ -199,9 +199,12 @@ All out-of-box defaults. The replacement firmware uses US Eastern, like the othe
   the plug would settle it.
 - **Light colours on site:** confirm GPIO0 = red, GPIO2 = green, GPIO5 = blue (set
   `#ff0000`, `#00ff00`, `#0000ff` and look).
-- **Button on site:** confirm a single press switches the relay and a double press the light.
 
 ### Resolved
+
+- **Button confirmed 2026-11-01** under Logix RGB Plug: single presses switch the relay,
+  double presses the light. 9 physical presses gave 7 actions (5 single, 2 double), with no
+  double counts. The web page's light controls (color, brightness, Pulse) also worked.
 
 - **Installed Logix RGB Plug 1.0.0 on 2026-11-01** over Tasmota's upload form
   (`firmware.bin.gz`, SHA-256 `799b6ea6…cba5b5`). The first boot imported the Tasmota 12.0.2
